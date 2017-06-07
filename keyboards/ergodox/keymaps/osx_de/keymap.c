@@ -146,219 +146,205 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 const uint16_t PROGMEM fn_actions[] = {
-
 };
 
-const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
-{
-static uint16_t start;
-switch(id) {
-case M_TOGGLE_5:
-//Macro: M_TOGGLE_5//-----------------------
- if (record->event.pressed){
-           layer_state ^= (1<<5);
-           layer_state &= (1<<5);
-        }
-
-break;
-case M_CTRL_CMDC:
-//Macro: M_CTRL_CMDC//-----------------------
-if (record->event.pressed) {
+const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt) {
+	static uint16_t start;
+	switch(id) {
+	case M_TOGGLE_5:
+		//Macro: M_TOGGLE_5//-----------------------
+		if (record->event.pressed) {
+			layer_state ^= (1<<5);
+			layer_state &= (1<<5);
+		}
+		
+		break;
+	case M_CTRL_CMDC:
+		//Macro: M_CTRL_CMDC//-----------------------
+		if (record->event.pressed) {
 			start = timer_read();
 			return MACRO(D(LCTRL),END);
-		} else {
+		}
+		else {
 			if (timer_elapsed(start) >150) {
 				return MACRO(U(LCTRL),END);
-			} else {
+			}
+			else {
 				return MACRO(U(LCTRL),D(LGUI),T(C),U(LGUI),END);
 			}
 		}
-
-break;
-case M_DE_OSX_PLUS_CTRLALT:
-//Macro: M_DE_OSX_PLUS_CTRLALT//-----------------------
-if (record->event.pressed) {
-			start = timer_read();
-			return MACRO(D(LCTRL),D(LALT),END);
-		} else {
+		break;
+	case M_DE_OSX_PLUS_CTRLALT:
+		//Macro: M_DE_OSX_PLUS_CTRLALT//-----------------------
+		if (record->event.pressed) {
+				start = timer_read();
+				return MACRO(D(LCTRL),D(LALT),END);
+		}
+		else {
 			if (timer_elapsed(start) >150) {
 				return MACRO(U(LCTRL),U(LALT),END);
-			} else {
+			}
+			else {
 				return MACRO(U(LCTRL),U(LALT),T(RBRC),END);
 			}
 		}
-
-break;
-case SM_KISS:
-//Macro: SM_KISS//-----------------------
-if (record->event.pressed) {
+		break;
+	case SM_KISS:
+		//Macro: SM_KISS//-----------------------
+		if (record->event.pressed) {
 			return MACRO(D(LSFT),T(DOT),U(LSFT),T(SLSH),D(LSFT),T(RBRC),U(LSFT),END);
 		}
-
-break;
-case SM_FROWN:
-//Macro: SM_FROWN//-----------------------
-if (record->event.pressed) {
+		
+		break;
+	case SM_FROWN:
+		//Macro: SM_FROWN//-----------------------
+		if (record->event.pressed) {
 			return MACRO(D(LSFT),T(DOT),U(LSFT),T(SLSH),D(LALT),T(8),U(LALT),END);
 		}
-
-break;
-case SM_CRY:
-//Macro: SM_CRY//-----------------------
-if (record->event.pressed) {
+		break;
+	case SM_CRY:
+		//Macro: SM_CRY//-----------------------
+		if (record->event.pressed) {
 			return MACRO(D(LSFT),T(COMM),U(LSFT),T(SLSH),D(LSFT),T(8),U(LSFT),END);
 		}
-
-break;
-case SM_SMILE:
-//Macro: SM_SMILE//-----------------------
-if (record->event.pressed) {
+		break;
+	case SM_SMILE:
+		//Macro: SM_SMILE//-----------------------
+		if (record->event.pressed) {
 			return MACRO(D(LSFT),T(DOT),U(LSFT),T(SLSH),D(LSFT),T(9),U(LSFT),END);
 		}
-
-break;
-case SM_SMIRK:
-//Macro: SM_SMIRK//-----------------------
-if (record->event.pressed) {
+		break;
+	case SM_SMIRK:
+		//Macro: SM_SMIRK//-----------------------
+		if (record->event.pressed) {
 			return MACRO(D(LSFT),T(COMM),U(LSFT),T(SLSH),D(LSFT),T(9),U(LSFT),END);
 		}
-
-break;
-case M_LGUI_SHFT:
-//Macro: M_LGUI_SHFT//-----------------------
-if (record->event.pressed){
+		break;
+	case M_LGUI_SHFT:
+		//Macro: M_LGUI_SHFT//-----------------------
+		if (record->event.pressed){
 			return MACRO(D(LGUI),D(LSFT),END);
-		}else{
+		} else{
 			return MACRO(U(LGUI),U(LSFT),END);
 		}
-
-break;
-case SM_HEART:
-//Macro: SM_HEART//-----------------------
-if (record->event.pressed) {
+		break;
+	case SM_HEART:
+		//Macro: SM_HEART//-----------------------
+		if (record->event.pressed) {
 			return MACRO(T(GRV),T(3),END);
 		}
-
-break;
-case SM_LAUGH:
-//Macro: SM_LAUGH//-----------------------
-if (record->event.pressed) {
+		break;
+	case SM_LAUGH:
+		//Macro: SM_LAUGH//-----------------------
+		if (record->event.pressed) {
 			return MACRO(D(LSFT),T(DOT),U(LSFT),T(SLSH),D(LSFT),T(D),U(LSFT),END);
 		}
-
-break;
-case M_CTL_SFT_HASH:
-//Macro: M_CTL_SFT_HASH//-----------------------
-if (record->event.pressed) {
+		break;
+	case M_CTL_SFT_HASH:
+		//Macro: M_CTL_SFT_HASH//-----------------------
+		if (record->event.pressed) {
 			start = timer_read();
 			return MACRO(D(LCTRL),D(LSFT),END);
-		} else {
+		}
+		else {
 			if (timer_elapsed(start) >150) {
 				return MACRO(U(LCTRL),U(LSFT),END);
-			} else {
+			}
+			else {
 				return MACRO(U(LCTRL),U(LSFT),T(BSLS),END);
 			}
 		}
-
-break;
-case SM_SAD:
-//Macro: SM_SAD//-----------------------
-if (record->event.pressed) {
-			return MACRO(D(LSFT),T(DOT),U(LSFT),T(SLSH),D(LSFT),T(8),U(LSFT),END);
-		}
-
-break;
-case M_DE_OSX_CIRC_CTRLCMD:
-//Macro: M_DE_OSX_CIRC_CTRLCMD//-----------------------
-if (record->event.pressed) {
+		break;
+	case SM_SAD:
+		//Macro: SM_SAD//-----------------------
+		if (record->event.pressed) {
+					return MACRO(D(LSFT),T(DOT),U(LSFT),T(SLSH),D(LSFT),T(8),U(LSFT),END);
+				}
+		
+		break;
+	case M_DE_OSX_CIRC_CTRLCMD:
+		//Macro: M_DE_OSX_CIRC_CTRLCMD//-----------------------
+		if (record->event.pressed) {
 			start = timer_read();
 			return MACRO(D(LCTRL),D(LGUI),END);
-		} else {
+		}
+		else {
 			if (timer_elapsed(start) >150) {
 				return MACRO(U(LCTRL),U(LGUI),END);
-			} else {
+			}
+			else {
 				return MACRO(U(LCTRL),U(LGUI),T(NUBS),END);
 			}
 		}
-
-break;
-case M_CTRL_CMDV:
-//Macro: M_CTRL_CMDV//-----------------------
-if (record->event.pressed) {
+		break;
+	case M_CTRL_CMDV:
+		//Macro: M_CTRL_CMDV//-----------------------
+		if (record->event.pressed) {
 			start = timer_read();
 			return MACRO(D(LCTRL),END);
-		} else {
+		}
+		else {
 			if (timer_elapsed(start) >150) {
 				return MACRO(U(LCTRL),END);
-			} else {
+			}
+			else {
 				return MACRO(U(LCTRL),D(LGUI),T(V),U(LGUI),END);
 			}
 		}
-
-break;
-case M_MEH_SH_ACUT:
-//Macro: M_MEH_SH_ACUT//-----------------------
-if (record->event.pressed) {
+		break;
+	case M_MEH_SH_ACUT:
+		//Macro: M_MEH_SH_ACUT//-----------------------
+		if (record->event.pressed) {
 			start = timer_read();
 			return MACRO(D(LCTRL),D(LSFT),D(LALT),END);
-		} else {
+		}
+		else {
 			if (timer_elapsed(start) >150) {
 				return MACRO(U(LCTRL),U(LSFT),U(LALT),END);
-			} else {
+			}
+			else {
 				return MACRO(U(LCTRL),U(LALT),T(EQL),U(LSFT),END);
 			}
 		}
-
-break;
-}
-return MACRO_NONE;
+		break;
+	}
+	return MACRO_NONE;
 };
 
 // Runs just one time when the keyboard initializes.
 void matrix_init_user(void) {
-
 };
 
 // Runs constantly in the background, in a loop.
 void matrix_scan_user(void) {
-
-uint8_t layer = biton32(layer_state);
-
-ergodox_board_led_off();
-ergodox_right_led_1_off();
-ergodox_right_led_2_off();
-ergodox_right_led_3_off();
-switch (layer) {
-
-    case SYMB:
-        ergodox_right_led_1_on();
-        
-        
-        break;
-    case MDIA:
-        
-        ergodox_right_led_2_on();
-        
-        break;
-    case SMLY:
-        
-        
-        ergodox_right_led_3_on();
-        break;
-    case NUMB:
-        ergodox_right_led_1_on();
-        
-        ergodox_right_led_3_on();
-        break;
-    case EGOS:
-        ergodox_right_led_1_on();
-        ergodox_right_led_2_on();
-        ergodox_right_led_3_on();
-        break;
-default:
-// none
-break;
-}
-
+	uint8_t layer = biton32(layer_state);
+	ergodox_board_led_off();
+	ergodox_right_led_1_off();
+	ergodox_right_led_2_off();
+	ergodox_right_led_3_off();
+	switch (layer) {
+	case SYMB:
+		ergodox_right_led_1_on();
+		break;
+	case MDIA:
+		ergodox_right_led_2_on();
+		break;
+	case SMLY:
+		ergodox_right_led_3_on();
+		break;
+	case NUMB:
+		ergodox_right_led_1_on();
+		ergodox_right_led_3_on();
+		break;
+	case EGOS:
+		ergodox_right_led_1_on();
+		ergodox_right_led_2_on();
+		ergodox_right_led_3_on();
+		break;
+	default:
+		// none
+		break;
+	}
+	
 };
 
