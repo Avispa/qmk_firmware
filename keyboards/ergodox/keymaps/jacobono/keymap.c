@@ -26,7 +26,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	 *                                        | LGUI | App  |       |Ctrl/Esc|  Alt |
 	 *                                 ,------|------|------|       |--------+--------+------.
 	 *                                 |      |      |QUKSL |       |  QUKSL |        |      |
-   *                                 |Space |ENTER |------|       |--------| ENTER  |Space |
+	 *                                 |Space |ENTER |------|       |--------| ENTER  |Space |
 	 *                                 |      |      |MO(L3)|       | MO(L3) |        |      |
 	 *                                 `--------------------'       `------------------------'
 	 */
@@ -44,11 +44,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             LGUI(S(KC_SPC)),
             KC_SPC,KC_ENT,MO(NUMPAD),
 	    // right hand
-            KC_RGHT,      KC_6,    KC_7,    KC_8,    KC_9,   KC_0,              KC_DELT,
-            KC_TRNS,      KC_J,    KC_L,    KC_U,    KC_Y,   KC_SCLN,           KC_TAB,
-            KC_H,         KC_N,    KC_E,    KC_I,    KC_O,   KC_DEL,
-            LGUI(KC_TAB), KC_K,    KC_M,    KC_COMM, KC_DOT, CTL_T(KC_SLSH),    KC_RSFT,
-            MO(SYMB),     KC_DOWN, KC_TRNS, KC_RALT, KC_RGUI,
+            KC_RGHT,      KC_6,     KC_7,     KC_8,    KC_9,    KC_0,              KC_DELT,
+            KC_TRNS,      KC_J,     KC_L,     KC_U,    KC_Y,    KC_SCLN,           KC_TAB,
+                          KC_H,     KC_N,     KC_E,    KC_I,    KC_O,              KC_DEL,
+            LGUI(KC_TAB), KC_K,     KC_M,     KC_COMM, KC_DOT,  CTL_T(KC_SLSH),    KC_RSFT,
+                                    MO(SYMB), KC_DOWN, KC_TRNS, KC_RALT,           KC_RGUI,
             CTL_T(KC_ESC), KC_LALT,
             LGUI(S(KC_SPC)),
             MO(NUMPAD), KC_ENT, KC_SPC),
@@ -60,20 +60,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	 * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
 	 * | Tab    |   Q  |   W  |   E  |   R  |   T  |  L0  |           |  L0  |   Y  |   U  |   I  |   O  |   P  |   \    |
 	 * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
-   * | Ctrl   |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |; / L4|  CTRL  |
-   * |--------+------+------+------+------+------| Alt  |           | Alt  |------+------+------+------+------+--------|
-   * | LShift |Z/Ctrl|   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  |//Ctrl| RShift |
-   * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
-   *   |Grv/L3|  '"  |AltShf| Left |MO(L2)|                                       |MO(L2)| Down |   [  |   ]  | ~L3  |
-   *   `----------------------------------'                                       `----------------------------------'
-   *                                        ,-------------.       ,---------------.
-   *                                        | Tab  | BkSp |       | Alt  |Ctrl/Esc|
-   *                                 ,------|------|------|       |------+--------+------.
-   *                                 |      |      | Home |       | PgUp |        |      |
-   *                                 | Space| LGUI |------|       |------|  RGUI  |Enter |
-   *                                 |      |      | End  |       | PgDn |        |      |
-   *                                `--------------------'       `----------------------'
-   */
+	 * | Ctrl   |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |; / L4|  CTRL  |
+	 * |--------+------+------+------+------+------| Alt  |           | Alt  |------+------+------+------+------+--------|
+	 * | LShift |Z/Ctrl|   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  |//Ctrl| RShift |
+	 * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
+	 *   |Grv/L3|  '"  |AltShf| Left |MO(L2)|                                       |MO(L2)| Down |   [  |   ]  | ~L3  |
+	 *   `----------------------------------'                                       `----------------------------------'
+	 *                                        ,-------------.       ,---------------.
+	 *                                        | Tab  | BkSp |       | Alt  |Ctrl/Esc|
+	 *                                 ,------|------|------|       |------+--------+------.
+	 *                                 |      |      | Home |       | PgUp |        |      |
+	 *                                 | Space| LGUI |------|       |------|  RGUI  |Enter |
+	 *                                 |      |      | End  |       | PgDn |        |      |
+	 *                                `--------------------'       `----------------------'
+	 */
 	// If it accepts an argument (i.e, is a function), it doesn't need KC_.
 	// Otherwise, it needs KC_*
 	[QWERTY] = KEYMAP(  // layer 1
