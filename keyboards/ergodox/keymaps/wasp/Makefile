@@ -1,6 +1,6 @@
 # Having a file like this allows you to override Makefile definitions for your own particular keymap
 
-SUBPROJECT_DEFAULT = infinity
+SUBPROJECT = infinity
 
 LCD_BACKLIGHT_ENABLE = yes
 LCD_ENABLE = yes

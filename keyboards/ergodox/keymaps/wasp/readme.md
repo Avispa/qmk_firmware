@@ -13,14 +13,24 @@ My ErgoDox Infinity keymap. Don't know if it matters, but using it with a upper 
 
 ## Changelog:
 
-### 2017-06-06:
+#### 2017-06-08 CEST 15:41
+* Swapped Q and F key for the moment.
+* Swapped ALT and GUI key on both thumb clusters.
+* Put Delete key also on the left hand side on the lowest raw to the most right. Let's see what I will favor.
 
+### 2017-06-06:
 * Switched F and Q key on K.A,Y layout.
 
-### 2016-02-xx:
+#### 2017-04-09 CEST 03:17
+* Replaced Tab with Esc
+* Replaced F11 with momentary Fn layer (green, s. picture)
+* Swapped X and ß (sz)
+* Replaced upper BS doubled with Win/Gui
+* Changed number row to 9 7 5 3 1 /  0 2 4 6 8
+* Changed F-Keys accordingly
 
+### 2016-02-xx:
 * Removed ALT from V and M key again because it lead to too many unintended OS commands while fast typing.
 
 ### 2016-01-xx:
-
-* Init layout of basis of algernon's layout and altered heavily. Mainly just because of tap toggle functionality and the alted shift behaviour. Rest just skeleton.
+* Init layout on basis of algernon's layout but altered heavily. Only tap toggle functionality and the alted shift behaviour remained. Rest just for used as skeleton.
