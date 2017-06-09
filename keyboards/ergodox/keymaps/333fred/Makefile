@@ -1,4 +1,4 @@
-SUBPROJECT_DEFAULT = infinity
+SUBPROJECT = infinity
 LCD_BACKLIGHT_ENABLE = yes
 LCD_ENABLE = yes
 LED_ENABLE = yes

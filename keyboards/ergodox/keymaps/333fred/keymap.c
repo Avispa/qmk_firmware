@@ -355,7 +355,7 @@ void matrix_init_user(void) {
 
 // Runs constantly in the background, in a loop.
 void matrix_scan_user(void) {
-    ergodox_board_led_on();
+    //ergodox_board_led_on(); // Covered by ergodox_led_all_on()
     ergodox_led_all_on();
 };
 
